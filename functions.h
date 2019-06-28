@@ -3,16 +3,16 @@ Name: Justen Crockett
 Assignment: 04
 Purpose:
 ***********************************************************/
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
+#include <fstream>
 #include <iostream>
-#include "list.h"
-#include "data.h"
-#include "table.h"
-#include "functions.h"
-
-
+#include "main.h"
 using namespace std;
 
-#endif //MAIN_H
+void read_csv();
+void make_data(int*, string**, int);
+
+
+#endif //FUNCTIONS_H

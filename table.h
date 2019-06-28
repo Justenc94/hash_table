@@ -10,6 +10,8 @@ Purpose:
 #include <iostream>
 
 #define TABLESIZE 19
+#define DATASIZE 20
+#define BUFFER_SIZE 36
 
 using namespace std;
 
