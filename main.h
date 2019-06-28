@@ -3,10 +3,13 @@ Name: Justen Crockett
 Assignment: 04
 Purpose:
 ***********************************************************/
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
 
-int main() {
-    cout << "Hello, World!" << endl;
+#include <iostream>
+#include "list.h"
+#include "data.h"
 
-    return 0;
-}
+using namespace std;
+
+#endif //MAIN_H
