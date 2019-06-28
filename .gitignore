@@ -1,0 +1,7 @@
+#ignore everything
+*
+
+#unignore source code files
+!*.cpp
+!*.h
+!*.csv
