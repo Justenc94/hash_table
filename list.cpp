@@ -76,17 +76,13 @@ void List::printList(bool direction){
     temp_node = head;
     if(direction) {
         if (count == 0) {
-            cout << "=======================================" << endl;
             cout << "\t    LIST IS EMPTY" << endl;
-            cout << "=======================================" << endl << endl;
         } else {
-            cout << "================ Printing List ================" << endl;
             for (int i = 0; i < count; i++) {
                 cout << "ID: " << temp_node->id << "\tDATA: " << temp_node->data << "\tNode Number: " << (i + 1)
                      << endl;
                 temp_node = temp_node->next;
             }
-            cout << "===============================================" << endl << endl;
         }
     }else{
         for (int j = 0; j < count-1; j++) {

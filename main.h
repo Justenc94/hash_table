@@ -9,6 +9,7 @@ Purpose:
 #include <iostream>
 #include "list.h"
 #include "data.h"
+#include "table.h"
 
 using namespace std;
 

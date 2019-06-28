@@ -6,9 +6,10 @@ Purpose:
 #ifndef TABLE_H
 #define TABLE_H
 
+#include "list.h"
 #include <iostream>
 
-#define TABLESIZE 10
+#define TABLESIZE 19
 
 using namespace std;
 
@@ -17,15 +18,16 @@ struct TableEntry{
     bool used = false;
 };
 
-class Hashtable{
+class HashTable{
 public:
-    Hashtable();
+    HashTable();
 
     void dumpTable();
-    int addEntry(int);
+    int addEntry(int, string);
+
 
 private:
-    TableEntry *table;
+    List *table;
     int count;
 
     int hashId(int);
