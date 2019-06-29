@@ -20,7 +20,7 @@ void make_data(DataNode *temp_data, string file_name){
     }
 }
 
-int check_file(int arg_count,char **file_name){
+int check_file(int arg_count, char **file_name){
     fstream temp_file;
     if(arg_count < 1){
         return -1;

@@ -15,10 +15,6 @@ HashTable::~HashTable() {}
 
 //PUBLIC METHODS
 
-int HashTable::getNumberOfEntries(){
-    return count;
-}
-
 bool HashTable::addEntry(int id, string data){
     int position = hashId(id);
     List *list_node;
@@ -33,6 +29,10 @@ bool HashTable::removeEntry(int id){
     count--;
 }
 
+int HashTable::getNumberOfEntries(){
+    return count;
+}
+
 void HashTable::dumpTable(){
     List *temp_list;
     for (int i = 0; i < TABLESIZE; ++i) {
@@ -44,6 +44,13 @@ void HashTable::dumpTable(){
         temp_list->printList(true);
         cout << "=========================================" << endl << endl;
     }
+}
+
+void HashTable::clearTable(){
+    for (int i = 0; i < DATASIZE; ++i) {
+        table[i].clear();
+    }
+    count = 0;
 }
 
 //PRIVATE METHODS

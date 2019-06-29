@@ -38,5 +38,13 @@ int main(int argc, char** argv) {
     hashTable.dumpTable();
     cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
 
+    cout << "Testing clear table..." << endl;
+
+    hashTable.clearTable();
+
+    hashTable.dumpTable();
+
+    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+
     return 0;
 }

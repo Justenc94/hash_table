@@ -30,8 +30,8 @@ public:
     bool addEntry(int, string);
     bool removeEntry(int);
     int getNumberOfEntries();
-
     void dumpTable();
+    void clearTable();
 
 private:
     //private variables
