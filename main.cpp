@@ -26,24 +26,30 @@ int main(int argc, char** argv) {
     }else{
         cout << "Error: No file name passed into command line" <<  endl;
     }
-    hashTable.dumpTable();
+
+    //printing whole table
+    if(file_position != -1){
+        hashTable.dumpTable();
+    }else{
+        cout << "Error: No file name passed into command line, nothing to display." <<  endl;
+    }
 
     cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
 
     cout << "Testing remove entry..." << endl;
-
-    for (int j = 0; j < 4; ++j) {
-        hashTable.removeEntry(data_array[j].id);
-    }
-    hashTable.dumpTable();
-    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+    if(file_position != -1) {
+        for (int j = 0; j < 4; ++j) {
+            hashTable.removeEntry(data_array[j].id);
+        }
+        hashTable.dumpTable();
+        cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+    }else{
+        cout << "Error: No file name passed into command line, nothing to remove." <<  endl;
+    };
 
     cout << "Testing clear table..." << endl;
-
     hashTable.clearTable();
-
     hashTable.dumpTable();
-
     cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
 
     return 0;
