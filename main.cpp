@@ -30,6 +30,13 @@ int main(int argc, char** argv) {
 
     cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
 
+    cout << "Testing remove entry..." << endl;
+
+    for (int j = 0; j < 4; ++j) {
+        hashTable.removeEntry(data_array[j].id);
+    }
+    hashTable.dumpTable();
+    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
 
     return 0;
 }

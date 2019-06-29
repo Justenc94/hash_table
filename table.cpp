@@ -27,6 +27,12 @@ bool HashTable::addEntry(int id, string data){
     count++;
 }
 
+bool HashTable::removeEntry(int id){
+    int position = hashId(id);
+    table[position].deleteNode(id);
+    count--;
+}
+
 void HashTable::dumpTable(){
     List *temp_list;
     for (int i = 0; i < TABLESIZE; ++i) {

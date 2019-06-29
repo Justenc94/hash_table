@@ -28,6 +28,7 @@ public:
 
     //public methods
     bool addEntry(int, string);
+    bool removeEntry(int);
     int getNumberOfEntries();
 
     void dumpTable();
