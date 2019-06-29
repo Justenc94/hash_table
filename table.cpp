@@ -27,7 +27,6 @@ void HashTable::dumpTable(){
 
 int HashTable::addEntry(int id, string data){
     int position = hashId(id);
-    int new_position;
     List *list_node;
     list_node = &table[position];
     list_node->addNode(id, data);
