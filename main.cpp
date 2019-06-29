@@ -8,25 +8,19 @@ Purpose:
 int main() {
 
     //making test case parallel arrays to hold test data
-    int ids[DATASIZE];
-    string *data;
-    data = new string[DATASIZE];
+    DataNode *data_array;
+    data_array = new DataNode[DATASIZE];
 
     //filling arrays with test node data
-    make_data(ids, &data, DATASIZE);
+    make_data(data_array);
 
     HashTable hashTable;
 
-    cout << "Testing Main.cpp" << endl;
-    for (int i = 0; i < TABLESIZE; i++) {
-        cout << ids[i] << endl;
-        cout << data[i] << endl;
+    for (int i = 0; i < DATASIZE; ++i) {
+        hashTable.addEntry(data_array[i].id, data_array[i].data);
     }
 
-
-    hashTable.addEntry(1, "test");
-
-    //hashTable.dumpTable();
+    hashTable.dumpTable();
 
     return 0;
 }

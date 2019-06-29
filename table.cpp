@@ -17,7 +17,8 @@ void HashTable::dumpTable(){
     for (int i = 0; i < TABLESIZE; ++i) {
         temp_list = &table[i];
         cout << "=========================================" << endl;
-        cout << "Table position " << (i+1) << " contents: " << endl;
+        cout << "\tTable position " << (i+1) << " contents" << endl;
+        cout << "=========================================" << endl;
         temp_list = &table[i];
         temp_list->printList(true);
         cout << "=========================================" << endl << endl;
@@ -39,14 +40,3 @@ int HashTable::hashId(int temp_id){
     int position = temp_id % TABLESIZE;
     return position;
 }
-
-
-/*int HashTable::resolveCollision(int temp_pos){
-    while(table[temp_pos].used){
-        temp_pos++;
-        if(temp_pos >= TABLESIZE-1){
-            temp_pos = 0;
-        }
-    }
-    return temp_pos;
-}*/

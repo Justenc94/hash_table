@@ -11,8 +11,7 @@ Purpose:
 #include "main.h"
 using namespace std;
 
-void read_csv();
-void make_data(int*, string**, int);
+void make_data(DataNode*);
 
 
 #endif //FUNCTIONS_H

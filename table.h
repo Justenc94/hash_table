@@ -33,7 +33,6 @@ private:
     int count;
 
     int hashId(int);
-    int resolveCollision(int);
 };
 
 #endif //TABLE_H
