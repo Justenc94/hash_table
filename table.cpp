@@ -5,12 +5,27 @@ Purpose:
 ***********************************************************/
 #include "table.h"
 
+//constructor and destructor
 HashTable::HashTable(){
     count = 0;
     table = new List[TABLESIZE];
 }
 
+HashTable::~HashTable() {}
+
 //PUBLIC METHODS
+
+int HashTable::getNumberOfEntries(){
+    return count;
+}
+
+bool HashTable::addEntry(int id, string data){
+    int position = hashId(id);
+    List *list_node;
+    list_node = &table[position];
+    list_node->addNode(id, data);
+    count++;
+}
 
 void HashTable::dumpTable(){
     List *temp_list;
@@ -23,15 +38,6 @@ void HashTable::dumpTable(){
         temp_list->printList(true);
         cout << "=========================================" << endl << endl;
     }
-}
-
-
-bool HashTable::addEntry(int id, string data){
-    int position = hashId(id);
-    List *list_node;
-    list_node = &table[position];
-    list_node->addNode(id, data);
-    count++;
 }
 
 //PRIVATE METHODS

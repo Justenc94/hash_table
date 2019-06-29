@@ -22,16 +22,22 @@ struct TableEntry{
 
 class HashTable{
 public:
+    //constructor and destructor
     HashTable();
+    ~HashTable();
+
+    //public methods
+    bool addEntry(int, string);
+    int getNumberOfEntries();
 
     void dumpTable();
-    bool addEntry(int, string);
-
 
 private:
+    //private variables
     List *table;
     int count;
 
+    //private methods
     int hashId(int);
 };
 

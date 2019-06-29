@@ -26,8 +26,10 @@ int main(int argc, char** argv) {
     }else{
         cout << "Error: No file name passed into command line" <<  endl;
     }
+    hashTable.dumpTable();
 
-    //hashTable.dumpTable();
+    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+
 
     return 0;
 }
