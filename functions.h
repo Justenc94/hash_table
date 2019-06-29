@@ -11,7 +11,7 @@ Purpose:
 #include "main.h"
 using namespace std;
 
-void make_data(DataNode*);
-
+void make_data(DataNode*, string);
+int check_file(int, char**);
 
 #endif //FUNCTIONS_H

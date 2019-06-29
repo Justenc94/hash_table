@@ -25,7 +25,7 @@ public:
     HashTable();
 
     void dumpTable();
-    int addEntry(int, string);
+    bool addEntry(int, string);
 
 
 private:
