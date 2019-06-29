@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
     //creates table object
     HashTable hashTable;
 
-    //making test case parallel arrays to hold test data
+    //making DataNode array to hold data
     DataNode *data_array;
     data_array = new DataNode[DATASIZE];
 
