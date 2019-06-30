@@ -50,6 +50,14 @@ bool HashTable::contains(int id){
 
 }
 
+bool HashTable::isEmpty(){
+    if(count != 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+
 void HashTable::dumpTable(){
     List *temp_list;
     for (int i = 0; i < TABLESIZE; ++i) {

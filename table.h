@@ -32,15 +32,11 @@ public:
     int getNumberOfEntries();
     DataNode getValue(int, DataNode);
     bool contains(int);
-
+    bool isEmpty();
     void dumpTable();
     void clearTable();
 
-
-    //TODO: build contains method
-
     //TODO: use a dynamically created int instead of DATASIZE to allow for other set of data to be tested
-
 
 private:
     //private variables

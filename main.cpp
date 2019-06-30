@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
     int file_position = check_file(argc, argv);
 
     //filling arrays with test node data
+    cout << "Adding data to table..." << endl;
     if(file_position != -1){
         make_data(data_array, argv[file_position]);
         for (int i = 0; i < DATASIZE; ++i) {
@@ -26,8 +27,12 @@ int main(int argc, char** argv) {
     }else{
         cout << "Error: No file name passed into command line" <<  endl;
     }
+    cout << "Data was added to table." << endl << endl;
+
 
     //****************************************  printing whole table    ****************************************
+
+    cout << "Printing whole table to show data was added..." << endl;
     if(file_position != -1){
         hashTable.dumpTable();
     }else{
@@ -36,7 +41,9 @@ int main(int argc, char** argv) {
 
     cout << "Entry num: " << hashTable.getNumberOfEntries() << endl << endl;
 
-    //****************************************  testing get node on full table  ****************************************
+
+    //****************************************  testing get value on full table  ****************************************
+
     auto *temp_node = new DataNode;
 
     cout << "Testing get value method..." << endl << endl;
@@ -49,12 +56,14 @@ int main(int argc, char** argv) {
     }
     cout << "*****  Testing get value completed *****" << endl << endl;
 
+
     //****************************************   Testing contain method    ****************************************
+
     //searches table and returns true or false if the table contains an id
-    cout << "Testing contains method, will return if id passed is in table or not..." << endl;
+    cout << "Testing contains method..." << endl;
     for (int i = 0; i < 5; i++) {
         if(hashTable.contains(data_array[i].id)){
-            cout << "Table DOES contain: " << data_array[i].id << endl;      //NEED TO FIX 208 TO A NON CONSTANT - DEBUG ONLY
+            cout << "Table DOES contain: " << data_array[i].id << endl;
         }else{
             cout << "Table does NOT contain: " << data_array[i].id << endl << endl;
         }
@@ -62,10 +71,10 @@ int main(int argc, char** argv) {
     }
 
     //testing contains with WRONG ids passed to it
-    cout << "Testing contains method with WRONG ids, will return if id passed is in table or not..." << endl;
+    cout << "Testing contains method with WRONG ids..." << endl;
     for (int i = 0; i < 5; i++) {
         if(hashTable.contains(data_array[i].id)-1){
-            cout << "Table DOES contain: " << data_array[i].id << endl;      //NEED TO FIX 208 TO A NON CONSTANT - DEBUG ONLY
+            cout << "Table DOES contain: " << data_array[i].id << endl;
         }else{
             cout << "Table does NOT contain: " << data_array[i].id-1 << endl << endl;
         }
@@ -73,7 +82,18 @@ int main(int argc, char** argv) {
     }
 
 
+    //****************************************   Testing isEmpty method    ****************************************
+
+    cout << "Testing isEmpty method..." << endl;
+    if(hashTable.isEmpty()){
+        cout << "Table is empty" << endl << endl;
+    }else{
+        cout << "Table is NOT empty" << endl << endl;
+    }
+
+
     //****************************************   Testing remove entry    ****************************************
+
     cout << "Testing remove entry..." << endl;
     if(file_position != -1) {
         for (int j = 0; j < 4; ++j) {
@@ -85,11 +105,23 @@ int main(int argc, char** argv) {
         cout << "Error: No file name passed into command line, nothing to remove." <<  endl;
     };
 
+
     //****************************************   Testing clear table    ****************************************
-//    cout << "Testing clear table..." << endl;
-//    hashTable.clearTable();
-//    hashTable.dumpTable();
-//    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+
+    cout << "Testing clear table..." << endl;
+    hashTable.clearTable();
+    hashTable.dumpTable();
+    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl << endl;
+
+
+    //****************************************   Testing isEmpty method    ****************************************
+
+    cout << "Testing isEmpty method..." << endl;
+    if(hashTable.isEmpty()){
+        cout << "Table is empty" << endl << endl;
+    }else{
+        cout << "Table is NOT empty" << endl << endl;
+    }
 
     return 0;
 }
