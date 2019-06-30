@@ -30,10 +30,11 @@ public:
     bool addEntry(int, string);
     bool removeEntry(int);
     int getNumberOfEntries();
+    DataNode getValue(int, DataNode);
+
     void dumpTable();
     void clearTable();
 
-    //TODO: build get value method
 
     //TODO: build contains method
 

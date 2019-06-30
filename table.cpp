@@ -33,6 +33,12 @@ int HashTable::getNumberOfEntries(){
     return count;
 }
 
+DataNode HashTable::getValue(int id, DataNode temp_node){
+    int position = hashId(id);
+    table[position].getNode(id, &temp_node);
+    return temp_node;
+}
+
 void HashTable::dumpTable(){
     List *temp_list;
     for (int i = 0; i < TABLESIZE; ++i) {

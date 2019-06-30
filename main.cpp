@@ -34,7 +34,20 @@ int main(int argc, char** argv) {
         cout << "Error: No file name passed into command line, nothing to display." <<  endl;
     }
 
-    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl << endl;
+
+    //testing get node on full table
+    auto *temp_node = new DataNode;
+
+    cout << "Testing get value method..." << endl << endl;
+    for (int i = 0; i < 5; i++) {
+        *temp_node = hashTable.getValue(data_array[i].id, *temp_node);
+        cout << "Printing ID for get node test: " << endl;
+        cout << temp_node->id << endl;
+        cout << "Printing Data for get node test: " << endl;
+        cout << temp_node->data << endl << endl;
+    }
+    cout << "*****  Testing get value completed *****" << endl << endl;
 
     cout << "Testing remove entry..." << endl;
     if(file_position != -1) {
@@ -42,15 +55,19 @@ int main(int argc, char** argv) {
             hashTable.removeEntry(data_array[j].id);
         }
         hashTable.dumpTable();
-        cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+        cout << "Entry num: " << hashTable.getNumberOfEntries() << endl << endl;
     }else{
         cout << "Error: No file name passed into command line, nothing to remove." <<  endl;
     };
 
-    cout << "Testing clear table..." << endl;
-    hashTable.clearTable();
-    hashTable.dumpTable();
-    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+    //cout << "Testing clear table..." << endl;
+    //hashTable.clearTable();
+    //hashTable.dumpTable();
+    //cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
+
+
+
+
 
     return 0;
 }
