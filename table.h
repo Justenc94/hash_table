@@ -31,6 +31,7 @@ public:
     bool removeEntry(int);
     int getNumberOfEntries();
     DataNode getValue(int, DataNode);
+    bool contains(int);
 
     void dumpTable();
     void clearTable();

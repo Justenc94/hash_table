@@ -39,6 +39,17 @@ DataNode HashTable::getValue(int id, DataNode temp_node){
     return temp_node;
 }
 
+bool HashTable::contains(int id){
+    int position = hashId(id);
+    DataNode temp_node;
+    if(table[position].getNode(id, &temp_node)){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
 void HashTable::dumpTable(){
     List *temp_list;
     for (int i = 0; i < TABLESIZE; ++i) {

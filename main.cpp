@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
         cout << "Error: No file name passed into command line" <<  endl;
     }
 
-    //printing whole table
+    //****************************************  printing whole table    ****************************************
     if(file_position != -1){
         hashTable.dumpTable();
     }else{
@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 
     cout << "Entry num: " << hashTable.getNumberOfEntries() << endl << endl;
 
-    //testing get node on full table
+    //****************************************  testing get node on full table  ****************************************
     auto *temp_node = new DataNode;
 
     cout << "Testing get value method..." << endl << endl;
@@ -49,6 +49,31 @@ int main(int argc, char** argv) {
     }
     cout << "*****  Testing get value completed *****" << endl << endl;
 
+    //****************************************   Testing contain method    ****************************************
+    //searches table and returns true or false if the table contains an id
+    cout << "Testing contains method, will return if id passed is in table or not..." << endl;
+    for (int i = 0; i < 5; i++) {
+        if(hashTable.contains(data_array[i].id)){
+            cout << "Table DOES contain: " << data_array[i].id << endl;      //NEED TO FIX 208 TO A NON CONSTANT - DEBUG ONLY
+        }else{
+            cout << "Table does NOT contain: " << data_array[i].id << endl << endl;
+        }
+        cout << "*****  Testing contains complete  *****" << endl << endl;
+    }
+
+    //testing contains with WRONG ids passed to it
+    cout << "Testing contains method with WRONG ids, will return if id passed is in table or not..." << endl;
+    for (int i = 0; i < 5; i++) {
+        if(hashTable.contains(data_array[i].id)-1){
+            cout << "Table DOES contain: " << data_array[i].id << endl;      //NEED TO FIX 208 TO A NON CONSTANT - DEBUG ONLY
+        }else{
+            cout << "Table does NOT contain: " << data_array[i].id-1 << endl << endl;
+        }
+        cout << "*****  Testing contains complete  *****" << endl << endl;
+    }
+
+
+    //****************************************   Testing remove entry    ****************************************
     cout << "Testing remove entry..." << endl;
     if(file_position != -1) {
         for (int j = 0; j < 4; ++j) {
@@ -60,14 +85,11 @@ int main(int argc, char** argv) {
         cout << "Error: No file name passed into command line, nothing to remove." <<  endl;
     };
 
-    //cout << "Testing clear table..." << endl;
-    //hashTable.clearTable();
-    //hashTable.dumpTable();
-    //cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
-
-
-
-
+    //****************************************   Testing clear table    ****************************************
+//    cout << "Testing clear table..." << endl;
+//    hashTable.clearTable();
+//    hashTable.dumpTable();
+//    cout << "Entry num: " << hashTable.getNumberOfEntries() << endl;
 
     return 0;
 }
