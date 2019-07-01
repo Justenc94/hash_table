@@ -19,14 +19,22 @@ bool HashTable::addEntry(int id, string data){
     int position = hashId(id);
     List *list_node;
     list_node = &table[position];
-    list_node->addNode(id, data);
-    count++;
+    if(list_node->addNode(id, data)){
+        count++;
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool HashTable::removeEntry(int id){
     int position = hashId(id);
-    table[position].deleteNode(id);
-    count--;
+    if(table[position].deleteNode(id)){
+        count--;
+        return true;
+    }else{
+        return false;
+    }
 }
 
 int HashTable::getNumberOfEntries(){
