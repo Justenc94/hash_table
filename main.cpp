@@ -13,26 +13,35 @@ int main(int argc, char** argv) {
     //checks files name passed from terminal
     int file_position = check_file(argc, argv);
 
+    //exits program if what is passed from terminal is not a file
+    if(file_position == -1){
+        cout << "ERROR: Please re-run program and enter a valid file name." << endl;
+        return 0;
+    }
+
     //get file size
     int file_size = get_filesize(argv[file_position]);
+
+    //exits program if what is passed from terminal is an empty data file
+    if (file_size == 0){
+        cout << "ERROR: File has no data inside it, please re-run program with a non empty file." << endl;
+        return 0;
+    }
 
     //making DataNode array to hold data
     DataNode *data_array;
     data_array = new DataNode[file_size];
 
-
     //filling arrays with test node data
+    cout << "File size: " << file_size << endl;
     cout << "Adding data to table..." << endl;
-    if(file_position != -1){
-        cout << "File size: " << file_size << endl;
-        make_data(data_array, argv[file_position], file_size);
-        cout << "Data Made..." << endl;
-        for (int i = 0; i < file_size; ++i) {
-            hashTable.addEntry(data_array[i].id, data_array[i].data);
-        }
-    }else{
-        cout << "Error: No file name passed into command line" <<  endl;
+
+    make_data(data_array, argv[file_position], file_size);
+    cout << "Data Made..." << endl;
+    for (int i = 0; i < file_size; ++i) {
+        hashTable.addEntry(data_array[i].id, data_array[i].data);
     }
+
     cout << "Data was added to table." << endl << endl;
 
 

@@ -29,7 +29,9 @@ int get_filesize(string file_name){
 
     //sets the size of the data to how many lines there are in the csv file passed to function
     while (getline(data_file, data_string, '\n')){
-        ++size;
+        if(!data_string.empty()){                //accounts for empty lines after data and doesn't add those to the size
+            ++size;
+        }
     }
     data_file.close();
     return size;
