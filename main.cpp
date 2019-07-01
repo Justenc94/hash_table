@@ -10,18 +10,24 @@ int main(int argc, char** argv) {
     //creates table object
     HashTable hashTable;
 
-    //making DataNode array to hold data
-    DataNode *data_array;
-    data_array = new DataNode[DATASIZE];
-
     //checks files name passed from terminal
     int file_position = check_file(argc, argv);
+
+    //get file size
+    int file_size = get_filesize(argv[file_position]);
+
+    //making DataNode array to hold data
+    DataNode *data_array;
+    data_array = new DataNode[file_size];
+
 
     //filling arrays with test node data
     cout << "Adding data to table..." << endl;
     if(file_position != -1){
-        make_data(data_array, argv[file_position]);
-        for (int i = 0; i < DATASIZE; ++i) {
+        cout << "File size: " << file_size << endl;
+        make_data(data_array, argv[file_position], file_size);
+        cout << "Data Made..." << endl;
+        for (int i = 0; i < file_size; ++i) {
             hashTable.addEntry(data_array[i].id, data_array[i].data);
         }
     }else{
