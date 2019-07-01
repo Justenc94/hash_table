@@ -72,7 +72,7 @@ void HashTable::dumpTable(){
 }
 
 void HashTable::clearTable(){
-    for (int i = 0; i < DATASIZE-1; ++i) {
+    for (int i = 0; i < TABLESIZE; ++i) {
         table[i].clear();
     }
     count = 0;

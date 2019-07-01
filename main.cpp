@@ -103,13 +103,14 @@ int main(int argc, char** argv) {
         cout << "Entry num: " << hashTable.getNumberOfEntries() << endl << endl;
     }else{
         cout << "Error: No file name passed into command line, nothing to remove." <<  endl;
-    };
+    }
 
 
     //****************************************   Testing clear table    ****************************************
 
-    cout << "Testing clear table..." << endl;
+    cout << "Testing clear table..." << endl << endl;
     hashTable.clearTable();
+    cout << "Printing cleared table." << endl << endl;
     hashTable.dumpTable();
     cout << "Entry num: " << hashTable.getNumberOfEntries() << endl << endl;
 

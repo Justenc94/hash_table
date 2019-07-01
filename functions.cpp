@@ -9,6 +9,7 @@ void make_data(DataNode *temp_data, string file_name){
     ifstream data_file;
     data_file.open(file_name);
 
+    int size = 0;
     string id_string;
     string data_string;
 
